@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# Calendar Application for Communication Tracking
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based Calendar Application that enables efficient tracking of communication with companies, ensuring timely follow-ups and consistent engagement. The application provides a centralized platform for logging past interactions, planning future communications, and managing engagement schedules.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Visit the live application at: [https://project118.netlify.app/](https://project118.netlify.app/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Admin Module
+- *Company Management*
+  - Add, edit, and delete companies
+  - Track company details (name, location, contact info)
+  - Set communication periodicity
+  - Manage LinkedIn profiles and contact information
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- *Communication Method Management*
+  - Define and customize communication methods
+  - Set sequence and mandatory flags
+  - Organize methods by priority
 
-### `npm test`
+### User Module
+- *Dashboard*
+  - Real-time statistics
+  - Color-coded notifications for due communications
+  - Quick access to pending tasks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- *Communication Tracking*
+  - Log and monitor all communications
+  - Schedule future interactions
+  - Track communication history
 
-### `npm run build`
+### Notification System
+- Real-time notifications for:
+  - Upcoming communications
+  - Overdue follow-ups
+  - Important updates
+  - Status changes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js >= 14.0.0
+- npm >= 6.14.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   bash
+   git clone [your-repository-url]
+   
 
-### `npm run eject`
+2. Install dependencies:
+   bash
+   cd calendar-app
+   npm install
+   
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Create a .env file in the root directory:
+   env
+   REACT_APP_API_URL=http://localhost:3001
+   REACT_APP_JWT_SECRET=your_jwt_secret
+   
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the development server:
+   bash
+   npm run dev
+   
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Built With
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React 18.2.0
+- Redux Toolkit for state management
+- React Router for navigation
+- Express.js for backend
+- React Icons for UI elements
+- Date-fns for date manipulation
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+calendar-app/
+├── src/
+│   ├── modules/
+│   │   ├── admin/          # Admin module components
+│   │   └── user/           # User module components
+│   ├── store/              # Redux store configuration
+│   ├── utils/              # Utility functions
+│   └── App.js             # Main application component
+├── server/                 # Backend server files
+└── public/                # Static assets
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The application can be configured through environment variables:
+- REACT_APP_API_URL: Backend API URL
+- REACT_APP_JWT_SECRET: JWT secret for authentication
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Admin Dashboard
+- Statistics display showing:
+  - Total Companies: Overview of managed companies
+  - Active Communications: Current ongoing communications
+  - Pending Follow-ups: Tasks requiring attention
+  - Completed Follow-ups: Successfully completed tasks
 
-### Making a Progressive Web App
+### Company Management
+- Comprehensive company profiles
+- Communication history tracking
+- Status monitoring
+- Contact information management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Communication Methods
+- Customizable communication channels
+- Priority-based sequencing
+- Mandatory step enforcement
+- Method effectiveness tracking
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### `npm run build` fails to minify
+## Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For support, email [your-email] or create an issue in the repository.

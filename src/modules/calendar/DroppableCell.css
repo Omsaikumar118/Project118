@@ -1,0 +1,140 @@
+/* Calendar Cell */
+.calendar-cell {
+  background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 120px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.calendar-cell:hover {
+  transform: translateY(-2px);
+}
+
+.calendar-cell.today {
+  border: 2px solid #4a90e2;
+}
+
+.calendar-cell.different-month {
+  opacity: 0.5;
+}
+
+.calendar-cell.is-over {
+  background: linear-gradient(145deg, #2a3f5f, #1a2a3f);
+  border: 2px dashed #4a90e2;
+}
+
+/* Date Display */
+.date-display {
+  color: #ffffff;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-display .weekday {
+  font-size: 0.9rem;
+  color: #4a90e2;
+}
+
+/* Events Container */
+.events-container {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4a90e2 #1a1a1a;
+}
+
+.events-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.events-container::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.events-container::-webkit-scrollbar-thumb {
+  background-color: #4a90e2;
+  border-radius: 3px;
+}
+
+/* Event Items */
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  background: rgba(74, 144, 226, 0.1);
+  border-left: 3px solid #4a90e2;
+  cursor: move;
+  transition: all 0.2s ease;
+}
+
+.event-item:hover {
+  background: rgba(74, 144, 226, 0.2);
+}
+
+.event-item.opacity-50 {
+  opacity: 0.5;
+}
+
+.event-item.completed {
+  background: linear-gradient(145deg, #4caf50, #388e3c);
+}
+
+.event-item.pending {
+  opacity: 0.7;
+}
+
+.event-time {
+  font-size: 0.65rem;
+  opacity: 0.8;
+  margin-right: 6px;
+}
+
+.event-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recurring-icon {
+  margin-left: auto;
+  color: #4a90e2;
+  display: flex;
+  align-items: center;
+}
+
+/* Day View Specific Styles */
+.day-view .calendar-cell {
+  min-height: 400px;
+}
+
+.day-view .events-container {
+  max-height: 350px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calendar-cell {
+    min-height: 100px;
+    padding: 8px;
+  }
+
+  .date-display {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .event-item {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .event-time {
+    font-size: 0.7rem;
+  }
+}

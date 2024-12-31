@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      background-color: #ff9900;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .content {
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #666;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff9900;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .reminder-box {
+      background-color: #fff3e0;
+      border: 1px solid #ffcc80;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Communication Reminder</h1>
+    </div>
+    <div class="content">
+      <div class="reminder-box">
+        <h2>⏰ Reminder: Communication in <%= minutesBefore %> minutes!</h2>
+      </div>
+
+      <p>Hello <%= recipient.name %>,</p>
+      <p>This is a reminder for your upcoming communication with <%= communication.companyName %>.</p>
+      
+      <h3>Details:</h3>
+      <ul>
+        <li><strong>Company:</strong> <%= communication.companyName %></li>
+        <li><strong>Method:</strong> <%= communication.methodName %></li>
+        <li><strong>Date:</strong> <%= date %></li>
+        <li><strong>Time:</strong> <%= time %></li>
+      </ul>
+
+      <% if (communication.notes) { %>
+        <p><strong>Notes:</strong> <%= communication.notes %></p>
+      <% } %>
+
+      <a href="<%= process.env.APP_URL %>/calendar/event/<%= communication.id %>" class="button">
+        View Details
+      </a>
+    </div>
+    <div class="footer">
+      <p>This is an automated reminder from your Communication Tracker.</p>
+      <p>If you wish to modify your reminder settings, please visit your account settings.</p>
+    </div>
+  </div>
+</body>
+</html>

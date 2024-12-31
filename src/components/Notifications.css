@@ -1,0 +1,235 @@
+/* Dark Theme Variables */
+:root {
+  --dark-bg: #1a1a1a;
+  --dark-surface: #2d2d2d;
+  --dark-surface-hover: #383838;
+  --dark-text: #ffffff;
+  --dark-text-secondary: #a0a0a0;
+  --dark-border: #404040;
+  --dark-primary: #2196f3;
+  --dark-primary-hover: #1976d2;
+  --dark-error: #ef5350;
+  --dark-success: #4caf50;
+}
+
+.notifications-container {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--dark-surface);
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-icon:hover {
+  background: var(--dark-surface-hover);
+  transform: scale(1.05);
+}
+
+.notification-icon svg {
+  color: var(--dark-primary);
+  width: 20px;
+  height: 20px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: var(--dark-error);
+  color: var(--dark-text);
+  border-radius: 50%;
+  padding: 1px 4px;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.notifications-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background: var(--dark-bg);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  overflow-y: auto;
+}
+
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--dark-border);
+  position: sticky;
+  top: 0;
+  background: var(--dark-surface);
+  z-index: 1;
+}
+
+.notifications-header h2 {
+  color: var(--dark-text);
+  font-size: 24px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--dark-text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background: var(--dark-surface-hover);
+  color: var(--dark-text);
+}
+
+.notification-section {
+  background: var(--dark-surface);
+  border-radius: 8px;
+  margin: 16px;
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 16px;
+  background: var(--dark-surface);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.section-header h3 {
+  color: var(--dark-text);
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.notification-item {
+  padding: 16px;
+  border-bottom: 1px solid var(--dark-border);
+  transition: all 0.2s ease;
+  background: var(--dark-surface);
+}
+
+.notification-item:hover {
+  background: var(--dark-surface-hover);
+  transform: translateX(5px);
+}
+
+.company-info {
+  margin-bottom: 8px;
+}
+
+.company-name {
+  color: var(--dark-text);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.communication-method {
+  color: var(--dark-text-secondary);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.due-date {
+  color: var(--dark-text-secondary);
+  font-size: 13px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.overdue {
+  background: rgba(239, 83, 80, 0.2);
+  color: #ef5350;
+}
+
+.status-badge.due-today {
+  background: rgba(33, 150, 243, 0.2);
+  color: #2196f3;
+}
+
+.empty-state {
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.empty-state p {
+  color: var(--dark-text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+.loading-state {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--dark-text-secondary);
+}
+
+.error-state {
+  margin: 16px;
+  padding: 16px;
+  background: rgba(239, 83, 80, 0.1);
+  border: 1px solid rgba(239, 83, 80, 0.2);
+  border-radius: 8px;
+  color: var(--dark-error);
+}
+
+/* Scrollbar styling for dark theme */
+.notifications-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.notifications-panel::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+.notifications-panel::-webkit-scrollbar-thumb {
+  background: var(--dark-border);
+  border-radius: 4px;
+}
+
+.notifications-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-surface-hover);
+}
+
+@media (max-width: 480px) {
+  .notifications-panel {
+    max-width: 100%;
+  }
+
+  .notification-item {
+    padding: 12px;
+  }
+}
